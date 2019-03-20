@@ -1,12 +1,12 @@
 	.data
 	.align 0
 
-str_op:        .asciiz "\nDigite uma opção: "
+str_op:        .asciiz "\nDigite uma opcao: "
 str_valores:   .asciiz "Digite um numero: "
 str_peso:      .asciiz "Digite o peso: "
 str_altura:    .asciiz "Digite a altura: "
 str_resp:      .asciiz "A resposta eh: "
-str_error:     .asciiz "Entrada inválida. =(\n"
+str_error:     .asciiz "Entrada invalida. =(\n"
 str_theend:    .asciiz "The end o/\n"
 newline:       .asciiz "\n"
 
@@ -14,14 +14,14 @@ newline:       .asciiz "\n"
 	.globl main
 
 main:
-	li	    $v0, 4						# imprime string da opção
+	li	    $v0, 4						# imprime string da opcao
 	la      $a0, str_op
 	syscall
 	
-	li      $v0, 5                      # le opção
+	li      $v0, 5                      # le opcao
 	syscall
 	
-	addi    $t0, $zero, 0               # atribui 0 para registrador t0, que será utilizado para a comparação da opção
+	addi    $t0, $zero, 0               # atribui 0 para registrador t0, que sera utilizado para a camparacao da opcao
 	beq     $v0, $t0, end               # op = 0 -> encerra programa
 	
 	addi    $t0, $t0, 1                 # t0 = 1
@@ -40,7 +40,7 @@ main:
 	beq     $v0, $t0, potencia          # op = 5 -> potencia 
 	
 	addi    $t0, $t0, 1                 # t0 = 6
-	beq     $v0, $t0, raiz              # op = 6 -> raiz quadrada de um número
+	beq     $v0, $t0, raiz              # op = 6 -> raiz quadrada de um numero
 	
 	addi    $t0, $t0, 1                 # t0 = 7
 	beq     $v0, $t0, tabuada           # op = 7 -> tabuada de um numero
@@ -49,7 +49,7 @@ main:
 	beq     $v0, $t0, imc               # op = 0 -> calcula imc
 	
 	addi    $t0, $t0, 1                 # t0 = 9
-	beq     $v0, $t0, fatorial          # op = 9 -> calcula fatorial de um número
+	beq     $v0, $t0, fatorial          # op = 9 -> calcula fatorial de um numero
 	
 	addi    $t0, $t0, 1                 # t0 = 10
 	beq     $v0, $t0, fibonacci         # op = 10 -> fibonacci de um intervalo
@@ -57,24 +57,24 @@ main:
 	addi    $t0, $t0, 1                 # t0 = 11
 	beq     $v0, $t0, end               # op = 11 -> encerra programa
 			
-	j printErro                         # se valor for maior que 11, é impressa uma mensagem de erro
+	j printErro                         # se valor for maior que 11, sera impressa uma mensagem de erro
 
 #---------------------------------------------------------------------------------------------#	
 soma:	#op_code: 1
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
@@ -84,20 +84,20 @@ soma:	#op_code: 1
 
 #---------------------------------------------------------------------------------------------#		
 subtracao: #op_code: 2
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
@@ -107,20 +107,20 @@ subtracao: #op_code: 2
 
 #---------------------------------------------------------------------------------------------#		
 multiplicacao: #op_code: 3
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
@@ -130,20 +130,20 @@ multiplicacao: #op_code: 3
 
 #---------------------------------------------------------------------------------------------#		
 divisao: #op_code: 4
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
@@ -154,50 +154,39 @@ divisao: #op_code: 4
 #---------------------------------------------------------------------------------------------#	
 potencia: #op_code: 5
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1 (base)
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # 2ê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2 (expoente)
 	
-	addi $t0, $zero, 1		#t0 contem o resultado (inicializado como 0)
-	add $t1, $zero, $a1		# salva uma c�pia da base em (t1)
-	add $t2, $zero, $a2		#salva uma c�pia do expoente em (t2)
-	
-	Pot_loop:
-	
-		beq $t2, 0, End_Pot_Loop
-		
-			mul $t0, $t0, $t1		#multiplica t0 pela base
-			addi $t2, $t2, -1		#decrementa quantas vezes o unmero ja foi multiplicado
-		
-		j Pot_loop
-	
-	End_Pot_Loop:
-	
-		move $v0, $t0
-	
-	j printAns
+	addi    $t0, $zero, 1               # t0 ser� utilizado para compara��o do final do loop
+
+potLoop:
+	beq     $a2, $t0, printAns          # enquanto expoente != 1
+	mul     $v0, $v0, $a1               # multiplica a base
+	subi    $a2, $a2, 1                 # subtrai 1 do expoente
+	j potLoop                           # volta para o loop
 
 #---------------------------------------------------------------------------------------------#						
 raiz: 		#op code 6
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1 (base) = n
@@ -222,14 +211,15 @@ endLoopRaiz:
 
 	add		$v0, $zero, $a2
 	j printAns
+
 #---------------------------------------------------------------------------------------------#						
 tabuada:	#op code 7
 
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # le valor
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1 (base)
@@ -240,34 +230,68 @@ tabuada:	#op code 7
 	la		$a0, str_resp
 	syscall						
 	
-	li      $v0, 4                      #imprime \n
+	li      $v0, 4                      # imprime \n
 	la      $a0, newline
 	syscall
 	
 	addi	$t0, $zero, 10				# contador da tabuada que vai decrementando
 	addi	$t1, $zero, 0				# inicializa $t1 com 0
 	
-loopTabuada:	beqz $t0, main
-	
+loopTabuada:	
+	beqz    $t0, main                   # ao encerrar a tabuada, volta para loop   
+
 	add		$t1, $t1, $a1				# carrega valor da tabuada em $t1
 	
 	li		$v0, 1						# imprime ($a1 * intera��o)
 	add		$a0, $zero, $t1
 	syscall
 	
-	li      $v0, 4                      #imprime \n
+	li      $v0, 4                      # imprime \n
 	la      $a0, newline
 	syscall
 	
 	subi	$t0, $t0, 1					# decrementa contador
 	j loopTabuada
+
 #---------------------------------------------------------------------------------------------#						
 imc:
 	j printAns
 
 #---------------------------------------------------------------------------------------------#						
 fatorial:
+	li      $v0, 4                      # imprime mensagem para usu�rio entrar com valor
+	la      $a0, str_valores
+	syscall
+	
+	li      $v0, 5                      # l� valor
+	syscall
+
+	move    $a0, $v0                    # copia o valor entrado no registrador a0
+	jal funcFat                         # chama fun��o do fatorial
+	
 	j printAns
+
+funcFat:
+	addi     $sp, $sp, -8               # reserva espa�o na pilha
+	sw       $a0, 0($sp)                # salva a0 (n) na pilha
+	sw       $ra, 4($sp)                # salva o endere�o de retorno na pilha
+	
+	beq      $a0, $zero, return1        # if (n == 0) return 1
+	subi     $a0, $a0, 1                # n = n-1
+	jal funcFat                         # chamada recursiva
+	
+	addi      $a0, $a0, 1               # soma 1 no valor que foi recuperado da pilha
+	mul       $v0, $v0, $a0             # n * fat(n-1)
+	j return                            # volta na recurs�o
+
+return1:
+    addi     $v0, $zero, 1
+
+return: 
+	lw       $a0, 0($sp)                # recupera a0 (n)
+	lw       $ra, 4($sp)                # recupera ra
+	addi     $sp, $sp, 8                # desempilha
+	jr       $ra                        # volta para fun��o que chamou essa
 
 #---------------------------------------------------------------------------------------------#						
 fibonacci:
