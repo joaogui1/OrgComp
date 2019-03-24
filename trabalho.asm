@@ -8,6 +8,7 @@ str_altura:    .asciiz "Digite a altura: "
 str_resp:      .asciiz "A resposta eh: "
 str_error:     .asciiz "Entrada invalida. =(\n"
 str_theend:    .asciiz "The end o/\n"
+str_space:	   .asciiz " "
 newline:       .asciiz "\n"
 
 	.text
@@ -172,7 +173,7 @@ potencia: #op_code: 5
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2 (expoente)
 	
-	addi    $t0, $zero, 1               # t0 será utilizado para comparação do final do loop
+	addi    $t0, $zero, 1               # t0 serï¿½ utilizado para comparaï¿½ï¿½o do final do loop
 
 potLoop:
 	beq     $a2, $t0, printAns          # enquanto expoente != 1
@@ -242,7 +243,7 @@ loopTabuada:
 
 	add		$t1, $t1, $a1				# carrega valor da tabuada em $t1
 	
-	li		$v0, 1						# imprime ($a1 * interação)
+	li		$v0, 1						# imprime ($a1 * interaï¿½ï¿½o)
 	add		$a0, $zero, $t1
 	syscall
 	
@@ -259,22 +260,22 @@ imc:
 
 #---------------------------------------------------------------------------------------------#						
 fatorial:
-	li      $v0, 4                      # imprime mensagem para usuário entrar com valor
+	li      $v0, 4                      # imprime mensagem para usuï¿½rio entrar com valor
 	la      $a0, str_valores
 	syscall
 	
-	li      $v0, 5                      # lê valor
+	li      $v0, 5                      # lï¿½ valor
 	syscall
 
 	move    $a0, $v0                    # copia o valor entrado no registrador a0
-	jal funcFat                         # chama função do fatorial
+	jal funcFat                         # chama funï¿½ï¿½o do fatorial
 	
 	j printAns
 
 funcFat:
-	addi     $sp, $sp, -8               # reserva espaço na pilha
+	addi     $sp, $sp, -8               # reserva espaï¿½o na pilha
 	sw       $a0, 0($sp)                # salva a0 (n) na pilha
-	sw       $ra, 4($sp)                # salva o endereço de retorno na pilha
+	sw       $ra, 4($sp)                # salva o endereï¿½o de retorno na pilha
 	
 	beq      $a0, $zero, return1        # if (n == 0) return 1
 	subi     $a0, $a0, 1                # n = n-1
@@ -282,7 +283,7 @@ funcFat:
 	
 	addi      $a0, $a0, 1               # soma 1 no valor que foi recuperado da pilha
 	mul       $v0, $v0, $a0             # n * fat(n-1)
-	j return                            # volta na recursão
+	j return                            # volta na recursï¿½o
 
 return1:
     addi     $v0, $zero, 1
@@ -291,11 +292,56 @@ return:
 	lw       $a0, 0($sp)                # recupera a0 (n)
 	lw       $ra, 4($sp)                # recupera ra
 	addi     $sp, $sp, 8                # desempilha
-	jr       $ra                        # volta para função que chamou essa
+	jr       $ra                        # volta para funï¿½ï¿½o que chamou essa
 
 #---------------------------------------------------------------------------------------------#						
 fibonacci:
-	j printAns
+	li	$v0	5
+	syscall 							#le o menor numero
+	move $s0	$v0 					#guarda o primeiro numero em s0
+	
+	li	$v0	5
+	syscall 							#le o maior numero
+	move $s1	$v0						#guarda o maior numero em s1
+		
+	jal fib 							#chama o procedimento fibonacci
+	
+	j main
+	
+fib:
+	addi	$sp	$sp	-12
+	sw	$ra	8($sp)
+	sw	$s1	4($sp)
+	sw	$s0	0($sp)
+	
+	addi	$a2	$a2	0 					#a2 guarda o fib a ser impresso
+	addi	$a1	$a1	1 					#a1 guarda o numero de fibonacci anterior ao a2
+	
+loopfib:	beq  $a2	$s1	endfib 		#se o a2 alcancou o valor maximo vai para o fim da funcao
+	add	$a2	$a2	$a1						#calcula o proximo fib
+	sub $a1	$a2	$a1 					#a1 fica com o valor do fib anterior
+	
+	bge	$a2	$s0	print 					#se o a2 Ã© maior que o minimo valor a ser impresso, imprime ele
+	j loopfib
+
+print:
+	li $v0	1
+	move	$a0	$a2
+	syscall 							#imprime o valor guardado em a2
+	
+	la	$a0	str_space
+	li	$v0	4
+	syscall 							#imprime um espaco
+	
+	j	loopfib
+
+endfib:
+	lw	$s0	0($sp)
+	lw	$s1	4($sp)
+	lw	$ra	8($sp) 						#desempilha os valores
+	addi	$sp	$sp	12 					#retorna o stack poonter para a posicao original
+	jr	$ra 							#return
+
 	
 #---------------------------------------------------------------------------------------------#						
 printAns:
