@@ -2,12 +2,12 @@
 	.align 0
 
 str_op:        .asciiz "\nDigite uma opcao: "
-str_valores:   .asciiz "Digite um numero: "
+str_entrada:   .asciiz "Digite um numero: "
 str_peso:      .asciiz "Digite o peso: "
 str_altura:    .asciiz "Digite a altura: "
 str_resp:      .asciiz "A resposta eh: "
 str_error:     .asciiz "Entrada invalida. =(\n"
-str_theend:    .asciiz "The end o/\n"
+str_theend:    .asciiz "Valeu, Bola o/\n"
 str_space:	   .asciiz " "
 newline:       .asciiz "\n"
 
@@ -60,10 +60,11 @@ main:
 			
 	j printErro                         # se valor for maior que 11, sera impressa uma mensagem de erro
 
+
 #---------------------------------------------------------------------------------------------#	
 soma:	#op_code: 1
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -72,7 +73,7 @@ soma:	#op_code: 1
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -83,10 +84,11 @@ soma:	#op_code: 1
 	add     $v0, $a1, $a2               # soma valores
 	j printAns
 
+
 #---------------------------------------------------------------------------------------------#		
 subtracao: #op_code: 2
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -95,7 +97,7 @@ subtracao: #op_code: 2
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -106,10 +108,11 @@ subtracao: #op_code: 2
 	sub     $v0, $a1, $a2               # subtrai valores
 	j printAns
 
+
 #---------------------------------------------------------------------------------------------#		
 multiplicacao: #op_code: 3
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -118,7 +121,7 @@ multiplicacao: #op_code: 3
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -129,65 +132,73 @@ multiplicacao: #op_code: 3
 	mul     $v0, $a1, $a2               # multiplica valores
 	j printAns
 
+
 #---------------------------------------------------------------------------------------------#		
 divisao: #op_code: 4
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # le valor
+	li      $v0, 5                      # le valor do dividendo
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # le valor
+	li      $v0, 5                      # le valor do divisor
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
+
+	beqz 	$a2, printErro 				# divisor igual a 0, erro
 	
 	div     $v0, $a1, $a2               # divide valores
 	j printAns
+
 
 #---------------------------------------------------------------------------------------------#	
 potencia: #op_code: 5
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # le valor
+	li      $v0, 5                      # le valor da base
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1 (base)
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # le valor
+	li      $v0, 5                      # le valor do expoente
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2 (expoente)
 	
-	addi    $t0, $zero, 1               # t0 ser� utilizado para compara��o do final do loop
+	addi    $t0, $zero, 1               # t0 sera utilizado para comparacoo do final do loop
+	addi	$v0, $zero, 1				# v0 (resposta) comeca com 1
+
+	blt		$a2, $zero, printErro		# se exponte for negativo, erro
 
 potLoop:
-	beq     $a2, $t0, printAns          # enquanto expoente != 1
+	ble     $a2, $t0, printAns          # enquanto expoente > 1
 	mul     $v0, $v0, $a1               # multiplica a base
 	subi    $a2, $a2, 1                 # subtrai 1 do expoente
 	j potLoop                           # volta para o loop
 
+
 #---------------------------------------------------------------------------------------------#						
 raiz: 		#op code 6
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # le valor
+	li      $v0, 5                      # le valor da base
 	syscall
 
 	move    $a1, $v0                    # copia o valor entrado no registrador a1 (base) = n
@@ -199,7 +210,8 @@ raiz: 		#op code 6
 										# $t1 sera variavel de comparacao para finalizar loop		
 	addi	$t0, $zero, 0				# contador de interacoes inicializado com 0
 	
-loopRaiz:	beq	$t1, $t0, endLoopRaiz
+loopRaiz:	
+	beq		$t1, $t0, endLoopRaiz
 	
 	div		$t3, $a1, $a2				# t3 = n / x
 	add 	$a2, $a2, $t3				# x = x + $t3
@@ -209,15 +221,13 @@ loopRaiz:	beq	$t1, $t0, endLoopRaiz
 	j loopRaiz
 	
 endLoopRaiz:	
-
 	add		$v0, $zero, $a2
 	j printAns
 
 #---------------------------------------------------------------------------------------------#						
 tabuada:	#op code 7
-
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
-	la      $a0, str_valores
+	la      $a0, str_entrada
 	syscall
 	
 	li      $v0, 5                      # le valor
@@ -254,28 +264,68 @@ loopTabuada:
 	subi	$t0, $t0, 1					# decrementa contador
 	j loopTabuada
 
+
 #---------------------------------------------------------------------------------------------#						
 imc:
-	j printAns
+	li 		$v0, 4 						# pede para o usuário o peso
+ 	la 		$a0, str_peso
+ 	syscall
+ 
+	li 		$v0, 6 						# recebe o peso
+	syscall     						# e move para a1
+	mov.s 	$f1, $f0   					# (f1 = peso)
+	 
+	ble		$f2, $zero, printErro		# peso <= zero, erro
+
+	li 		$v0, 4 						# pede para o usuário a altura
+	la 		$a0, str_altura
+	syscall
+	 
+	li 		$v0, 6 						# recebe a altura
+	syscall     						# e move para f2
+	mov.s 	$f2, $f0    				# (f2 = altura)
+
+	ble		$f2, $zero, printErro		# altura <= zero, erro
+	 
+	mul.s 	$f3, $f2, $f2   			# calcula altura^2 e atribui a f3
+	 
+	div.s 	$f0, $f1, $f3  				# divide a altura (f3) pelo peso (f1) e atribui a f0
+	 
+	li      $v0, 4    	                # imprime mensagem da resposta
+	la      $a0, str_resp
+	syscall
+	 
+	mov.s 	$f12, $f0                   # salva valor a ser impresso em f12
+	li  	$v0, 2                      # imprime resposta
+	syscall
+	 
+	li 	     $v0, 4                     # imprime \n
+	la  	 $a0, newline
+	syscall
+	 
+	j main								# volta para a main
+
 
 #---------------------------------------------------------------------------------------------#						
 fatorial:
-	li      $v0, 4                      # imprime mensagem para usu�rio entrar com valor
-	la      $a0, str_valores
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor
+	la      $a0, str_entrada
 	syscall
 	
-	li      $v0, 5                      # l� valor
+	li      $v0, 5                      # le valor (base)
 	syscall
 
 	move    $a0, $v0                    # copia o valor entrado no registrador a0
-	jal funcFat                         # chama fun��o do fatorial
+	jal funcFat                         # chama funcao do fatorial
 	
+	blt		$a0, $zero, printErro		# se base < 0, erro
+
 	j printAns
 
 funcFat:
-	addi     $sp, $sp, -8               # reserva espa�o na pilha
+	addi     $sp, $sp, -8               # reserva espaco na pilha
 	sw       $a0, 0($sp)                # salva a0 (n) na pilha
-	sw       $ra, 4($sp)                # salva o endere�o de retorno na pilha
+	sw       $ra, 4($sp)                # salva o endereco de retorno na pilha
 	
 	beq      $a0, $zero, return1        # if (n == 0) return 1
 	subi     $a0, $a0, 1                # n = n-1
@@ -283,7 +333,7 @@ funcFat:
 	
 	addi      $a0, $a0, 1               # soma 1 no valor que foi recuperado da pilha
 	mul       $v0, $v0, $a0             # n * fat(n-1)
-	j return                            # volta na recurs�o
+	j return                            # volta na recursao
 
 return1:
     addi     $v0, $zero, 1
@@ -292,55 +342,69 @@ return:
 	lw       $a0, 0($sp)                # recupera a0 (n)
 	lw       $ra, 4($sp)                # recupera ra
 	addi     $sp, $sp, 8                # desempilha
-	jr       $ra                        # volta para fun��o que chamou essa
+	jr       $ra                        # volta para funcao que chamou essa
+
 
 #---------------------------------------------------------------------------------------------#						
 fibonacci:
-	li	$v0	5
-	syscall 							#le o menor numero
-	move $s0	$v0 					#guarda o primeiro numero em s0
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor (primeiro do range)
+	la      $a0, str_entrada
+	syscall
+
+	li		$v0, 5
+	syscall 							# le o menor numero
+	move 	$a0, $v0 					# guarda o primeiro numero em a0
 	
-	li	$v0	5
-	syscall 							#le o maior numero
-	move $s1	$v0						#guarda o maior numero em s1
-		
-	jal fib 							#chama o procedimento fibonacci
+	blt		$a0, $zero, printErro		# se o range tiver numeros negativos, erro
+
+	li      $v0, 4                      # imprime mensagem para usuario entrar com valor (segundo do range)
+	la      $a0, str_entrada
+	syscall
+
+	li		$v0, 5
+	syscall 							# le o maior numero
+	move 	$a1, $v0					# guarda o maior numero em a1
 	
-	j main
+	blt		$a1, $a0, printErro			# se o range tiver o segundo extremo menor que o primeiro, erro
+
+	jal fib 							# chama o procedimento fibonacci
+	
+	j main								# após a funcao, retorna para a main
 	
 fib:
-	addi	$sp	$sp	-12
-	sw	$ra	8($sp)
-	sw	$s1	4($sp)
-	sw	$s0	0($sp)
+	addi	$sp, $sp, -12				# move ponteiro da pilha
+	sw		$ra, 8($sp)					# salva endereco de retorno
+	sw		$a1, 4($sp)					# salva
+	sw		$a0, 0($sp)
 	
-	addi	$a2	$a2	0 					#a2 guarda o fib a ser impresso
-	addi	$a1	$a1	1 					#a1 guarda o numero de fibonacci anterior ao a2
+	addi	$t0, $t0, 0 				# t0 guarda o fib a ser impresso
+	addi	$t1, $t1, 1 				# t1 guarda o numero de fibonacci anterior ao t0
 	
-loopfib:	beq  $a2	$s1	endfib 		#se o a2 alcancou o valor maximo vai para o fim da funcao
-	add	$a2	$a2	$a1						#calcula o proximo fib
-	sub $a1	$a2	$a1 					#a1 fica com o valor do fib anterior
+loopfib:	
+	beq 	$t0, $a1, endFib 		    # se o t0 alcancou o valor maximo, vai para o fim da funcao
+	add		$t0, $t0, $t1				# calcula o proximo fib
+	sub 	$t1, $t0, $t1				# t1 fica com o valor do fib anterior
 	
-	bge	$a2	$s0	print 					#se o a2 é maior que o minimo valor a ser impresso, imprime ele
+	bge		$t0, $a0, printFib 			# se o t0 é maior que o minimo valor a ser impresso, imprime ele
 	j loopfib
 
-print:
-	li $v0	1
-	move	$a0	$a2
-	syscall 							#imprime o valor guardado em a2
+printFib:
+	li 		$v0, 1						# imprime o valor guardado em t0, que eh o fib atual
+	move	$a0, $t0
+	syscall 							
 	
-	la	$a0	str_space
+	la	$a0	str_space					# imprime um espaco
 	li	$v0	4
-	syscall 							#imprime um espaco
+	syscall 							
 	
-	j	loopfib
+	j	loopfib							# volta para o loop
 
-endfib:
-	lw	$s0	0($sp)
-	lw	$s1	4($sp)
-	lw	$ra	8($sp) 						#desempilha os valores
-	addi	$sp	$sp	12 					#retorna o stack poonter para a posicao original
-	jr	$ra 							#return
+endFib:
+	lw	$a0	0($sp)						# desempilha os valores
+	lw	$a1	4($sp)
+	lw	$ra	8($sp) 						
+	addi	$sp	$sp	12 					# retorna o stack poonter para a posicao original
+	jr	$ra 							# returna para o endereco especificado (nesse caso, a main)
 
 	
 #---------------------------------------------------------------------------------------------#						
@@ -355,11 +419,12 @@ printAns:
 	li      $v0, 1                      # imprime resposta
 	syscall
 	
-	li      $v0, 4                      #imprime \n
+	li      $v0, 4                      # imprime \n
 	la      $a0, newline
 	syscall
 	
 	j main                              # volta para a main
+
 
 #---------------------------------------------------------------------------------------------#
 printErro:
@@ -367,17 +432,18 @@ printErro:
 	la      $a0, str_error
 	syscall
 
-	li      $v0, 4                      #imprime \n
+	li      $v0, 4                      # imprime \n
 	la      $a0, newline
 	syscall
 
-	j main
+	j main								# retorna para a main
+
 	
 #---------------------------------------------------------------------------------------------#						
 end:
-	li      $v0, 4
+	li      $v0, 4						# imprime mensagem do fim
 	la      $a0, str_theend
 	syscall
 	
-	li      $v0, 10
+	li      $v0, 10						# encerra execucao
 	syscall
