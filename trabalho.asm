@@ -274,8 +274,10 @@ imc:
 	li 		$v0, 6 						# recebe o peso
 	syscall     						# e move para a1
 	mov.s 	$f1, $f0   					# (f1 = peso)
-	 
-	ble		$f2, $zero, printErro		# peso <= zero, erro
+	
+	mtc1    $zero, $f4 
+	c.lt.s 	$f1, $f4  
+	bc1t	printErro		# peso <= zero, erro
 
 	li 		$v0, 4 						# pede para o usuário a altura
 	la 		$a0, str_altura
@@ -285,7 +287,8 @@ imc:
 	syscall     						# e move para f2
 	mov.s 	$f2, $f0    				# (f2 = altura)
 
-	ble		$f2, $zero, printErro		# altura <= zero, erro
+	c.lt.s 	$f2, $f4
+	bc1t	printErro		# altura <= zero, erro
 	 
 	mul.s 	$f3, $f2, $f2   			# calcula altura^2 e atribui a f3
 	 
@@ -304,7 +307,6 @@ imc:
 	syscall
 	 
 	j main								# volta para a main
-
 
 #---------------------------------------------------------------------------------------------#						
 fatorial:
@@ -353,9 +355,9 @@ fibonacci:
 
 	li		$v0, 5
 	syscall 							# le o menor numero
-	move 	$a0, $v0 					# guarda o primeiro numero em a0
+	move 	$a1, $v0 					# guarda o primeiro numero em a0
 	
-	blt		$a0, $zero, printErro		# se o range tiver numeros negativos, erro
+	blt		$a1, $zero, printErro		# se o range tiver numeros negativos, erro
 
 	li      $v0, 4                      # imprime mensagem para usuario entrar com valor (segundo do range)
 	la      $a0, str_entrada
@@ -363,9 +365,9 @@ fibonacci:
 
 	li		$v0, 5
 	syscall 							# le o maior numero
-	move 	$a1, $v0					# guarda o maior numero em a1
+	move 	$a2, $v0					# guarda o maior numero em a1
 	
-	blt		$a1, $a0, printErro			# se o range tiver o segundo extremo menor que o primeiro, erro
+	blt		$a2, $a1, printErro			# se o range tiver o segundo extremo menor que o primeiro, erro
 
 	jal fib 							# chama o procedimento fibonacci
 	
@@ -374,18 +376,20 @@ fibonacci:
 fib:
 	addi	$sp, $sp, -12				# move ponteiro da pilha
 	sw		$ra, 8($sp)					# salva endereco de retorno
-	sw		$a1, 4($sp)					# salva
-	sw		$a0, 0($sp)
+	sw		$a2, 4($sp)					# salva
+	sw		$a1, 0($sp)
 	
-	addi	$t0, $t0, 0 				# t0 guarda o fib a ser impresso
-	addi	$t1, $t1, 1 				# t1 guarda o numero de fibonacci anterior ao t0
+	addi	$t0, $zero, 0 				# t0 guarda o fib a ser impresso
+	addi	$t1, $zero, 1 				# t1 guarda o numero de fibonacci anterior ao t0
+	addi	$t2, $zero, 0					# t2 guarda o índice do fibonacci atual
 	
 loopfib:	
-	beq 	$t0, $a1, endFib 		    # se o t0 alcancou o valor maximo, vai para o fim da funcao
+	bge  	$t2, $a2, endFib 		    # se o t2 alcancou o valor maximo, vai para o fim da funcao
 	add		$t0, $t0, $t1				# calcula o proximo fib
 	sub 	$t1, $t0, $t1				# t1 fica com o valor do fib anterior
-	
-	bge		$t0, $a0, printFib 			# se o t0 é maior que o minimo valor a ser impresso, imprime ele
+	addi	$t2, $t2, 1
+		
+	bge		$t2, $a1, printFib 			# se o t0 é maior que o minimo valor a ser impresso, imprime ele
 	j loopfib
 
 printFib:
@@ -400,8 +404,8 @@ printFib:
 	j	loopfib							# volta para o loop
 
 endFib:
-	lw	$a0	0($sp)						# desempilha os valores
-	lw	$a1	4($sp)
+	lw	$a1	0($sp)						# desempilha os valores
+	lw	$a2	4($sp)
 	lw	$ra	8($sp) 						
 	addi	$sp	$sp	12 					# retorna o stack poonter para a posicao original
 	jr	$ra 							# returna para o endereco especificado (nesse caso, a main)
