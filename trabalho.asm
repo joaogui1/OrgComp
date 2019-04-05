@@ -1,7 +1,8 @@
 	.data
 	.align 0
 
-str_op:        .asciiz "\nDigite uma opcao: "
+str_menu1:	   .asciiz "Tecle 1 para soma\n2 para subtracao\n3 para multiplicacao\n4 para divisao\n5 para potencia\n6 para raiz\n"
+str_menu2:	   .asciiz "7 para tabuada\n8 para imc\n9 para fatorial\n10 para fiibonacci\n11 para sair do programa\nDigite uma opcao: "
 str_entrada:   .asciiz "Digite um numero: "
 str_peso:      .asciiz "Digite o peso: "
 str_altura:    .asciiz "Digite a altura: "
@@ -15,8 +16,12 @@ newline:       .asciiz "\n"
 	.globl main
 
 main:
-	li	    $v0, 4						# imprime string da opcao
-	la      $a0, str_op
+	li	    $v0, 4						# imprime primeira string do menu
+	la      $a0, str_menu1
+	syscall
+	
+	li	    $v0, 4						# imprime segunda string do menu
+	la      $a0, str_menu2
 	syscall
 	
 	li      $v0, 5                      # le opcao
