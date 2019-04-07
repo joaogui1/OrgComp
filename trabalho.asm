@@ -134,6 +134,11 @@ multiplicacao: #op_code: 3
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
 	
+	addi	$a3, $zero, 65535			# copia o maior valor de 16 bits para a3
+	
+	bgt		$a1, $a3, printErro			# verifica se a1 tem mais de 16 bits
+	bgt		$a2, $a3, printErro			# verifica se a2 tem mais de 16 bits
+	
 	mul     $v0, $a1, $a2               # multiplica valores
 	j printAns
 
@@ -157,8 +162,12 @@ divisao: #op_code: 4
 	syscall
 
 	move    $a2, $v0                    # copia o valor entrado no registrador a2
-
+	
+	addi	$a3, $zero, 65535			# copia o maior valor de 16 bits para a3
+	
 	beqz 	$a2, printErro 				# divisor igual a 0, erro
+	bgt		$a1, $a3, printErro			# verifica se a1 tem mais de 16 bits
+	bgt		$a2, $a3, printErro			# verifica se a2 tem mais de 16 bits
 	
 	div     $v0, $a1, $a2               # divide valores
 	j printAns
