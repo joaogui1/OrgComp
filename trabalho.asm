@@ -210,7 +210,7 @@ potencia: #op_code: 5
 	blt		$a2, $zero, printErro		# se exponte for negativo, erro
 
 potLoop:
-	ble     $a2, $t0, printAns          # enquanto expoente > 1
+	blt     $a2, $t0, printAns          # enquanto expoente > 1
 	mul     $v0, $v0, $a1               # multiplica a base
 	subi    $a2, $a2, 1                 # subtrai 1 do expoente
 	j potLoop                           # volta para o loop
@@ -428,6 +428,10 @@ printFib:
 	j	loopfib							# volta para o loop
 
 endFib:
+	la	$a0, newline					# imprime um '\n'
+	li	$v0, 4
+	syscall 	
+
 	lw	$a1	0($sp)						# desempilha os valores
 	lw	$a2	4($sp)
 	lw	$ra	8($sp) 						

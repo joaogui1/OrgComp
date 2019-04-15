@@ -147,24 +147,9 @@ Tecle 1 para soma
 10 para fiibonacci
 11 para sair do programa
 Digite uma opcao: 5
-Digite um numero: -3
-Digite um numero: 2
-A resposta eh: -3
-Tecle 1 para soma
-2 para subtracao
-3 para multiplicacao
-4 para divisao
-5 para potencia
-6 para raiz
-7 para tabuada
-8 para imc
-9 para fatorial
-10 para fiibonacci
-11 para sair do programa
-Digite uma opcao: 5
 Digite um numero: 3
 Digite um numero: 2
-A resposta eh: 3
+A resposta eh: 9
 Tecle 1 para soma
 2 para subtracao
 3 para multiplicacao
@@ -179,7 +164,38 @@ Tecle 1 para soma
 Digite uma opcao: 5
 Digite um numero: 10
 Digite um numero: 5
-A resposta eh: 10000
+A resposta eh: 100000
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: -3
+Digite um numero: 2
+A resposta eh: 9
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: -3
+Digite um numero: -2
+Entrada invalida. =(
+
 Tecle 1 para soma
 2 para subtracao
 3 para multiplicacao
@@ -332,7 +348,23 @@ Tecle 1 para soma
 10 para fiibonacci
 11 para sair do programa
 Digite uma opcao: 10
-Digite um numero: -2
+Digite um numero: 1
+Digite um numero: 5
+1 1 2 3 5 
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 5
+Digite um numero: 1
 Entrada invalida. =(
 
 Tecle 1 para soma
@@ -347,9 +379,11 @@ Tecle 1 para soma
 10 para fiibonacci
 11 para sair do programa
 Digite uma opcao: 10
-Digite um numero: 1
-Digite um numero: 6
-1 1 2 3 5 8 Tecle 1 para soma
+Digite um numero: 3
+Digite um numero: -4
+Entrada invalida. =(
+
+Tecle 1 para soma
 2 para subtracao
 3 para multiplicacao
 4 para divisao
@@ -361,9 +395,10 @@ Digite um numero: 6
 10 para fiibonacci
 11 para sair do programa
 Digite uma opcao: 10
-Digite um numero: 3
 Digite um numero: 5
-2 3 5 Tecle 1 para soma
+Digite um numero: 8
+5 8 13 21
+Tecle 1 para soma
 2 para subtracao
 3 para multiplicacao
 4 para divisao
