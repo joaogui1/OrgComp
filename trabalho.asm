@@ -431,7 +431,7 @@ endFib:
 	lw	$a1	0($sp)						# desempilha os valores
 	lw	$a2	4($sp)
 	lw	$ra	8($sp) 						
-	addi	$sp	$sp	12 					# retorna o stack poonter para a posicao original
+	addi	$sp	$sp	12 					# retorna o stack pointer para a posicao original
 	jr	$ra 							# returna para o endereco especificado (nesse caso, a main)
 
 	
