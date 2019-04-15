@@ -1,0 +1,380 @@
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 1
+Digite um numero: 32767
+Digite um numero: 13
+A resposta eh: 32780
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 1
+Digite um numero: -32767
+Digite um numero: -32767
+A resposta eh: -65534
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 2
+Digite um numero: 32767
+Digite um numero: -32767
+A resposta eh: 65534
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 2
+Digite um numero: 1
+Digite um numero: 3
+A resposta eh: -2
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: 32767
+Digite um numero: 32767
+A resposta eh: 1073676289
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: -32767
+Digite um numero: 2
+A resposta eh: -65534
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 20
+Digite um numero: 0
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 3271000
+Digite um numero: 1
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 24
+Digite um numero: 3
+A resposta eh: 8
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: -3
+Digite um numero: 2
+A resposta eh: -3
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: 3
+Digite um numero: 2
+A resposta eh: 3
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: 10
+Digite um numero: 5
+A resposta eh: 10000
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: 36
+A resposta eh: 6
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: -36
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: 0
+A resposta eh: 0
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 7
+Digite um numero: -3
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 7
+Digite um numero: 8
+A resposta eh: 
+8
+16
+24
+32
+40
+48
+56
+64
+72
+80
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: 65
+Digite a altura: 174
+A resposta eh: 0.002146915
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: -10
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 9
+Digite um numero: 5
+A resposta eh: 120
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 9
+Digite um numero: 3
+A resposta eh: 6
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: -2
+Entrada invalida. =(
+
+Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 1
+Digite um numero: 6
+1 1 2 3 5 8 Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 3
+Digite um numero: 5
+2 3 5 Tecle 1 para soma
+2 para subtracao
+3 para multiplicacao
+4 para divisao
+5 para potencia
+6 para raiz
+7 para tabuada
+8 para imc
+9 para fatorial
+10 para fiibonacci
+11 para sair do programa
+Digite uma opcao: 11
+Valeu, Bola o/
+
+-- program is finished running --
