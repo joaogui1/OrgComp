@@ -479,14 +479,14 @@ printErro:
 	la      $a0, newline
 	syscall
 
-	j main								# retorna para a main
+	j main				    # retorna para a main
 
 	
 #---------------------------------------------------------------------------------------------#						
 end:
-	li      $v0, 4						# imprime mensagem do fim
+	li      $v0, 4			    # imprime mensagem do fim
 	la      $a0, str_theend
 	syscall
 	
-	li      $v0, 10						# encerra execucao
+	li      $v0, 10			    # encerra execucao
 	syscall
