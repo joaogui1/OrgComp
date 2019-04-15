@@ -1,10 +1,10 @@
 	.data
 	.align 0
 
-str_menu1:	   .asciiz "Menu:\n 1 - Soma\n2 - Subtracao\n"
+str_menu1:	   .asciiz "\nMenu:\n1 - Soma\n2 - Subtracao\n"
 str_menu2:	   .asciiz "3 - Multiplicacao\n4 - Divisao\n5 - Potencia\n"
 str_menu3:     .asciiz "6 - Raiz Quadrada\n7 - Tabuada\n8 - IMC\n"
-str_menu4:	   .asciiz "9 - Fatorial\n10 - Fibonacci de um intervalo\n11 para sair do programa\nDigite uma opcao: \n"
+str_menu4:	   .asciiz "9 - Fatorial\n10 - Fibonacci de um intervalo\n11 para sair do programa\nDigite uma opcao: "
 str_entrada:   .asciiz "Digite um numero: "
 str_peso:      .asciiz "Digite o peso: "
 str_altura:    .asciiz "Digite a altura: "
@@ -287,12 +287,12 @@ loopTabuada:
 
 	add		$t1, $t1, $a1				# carrega valor da tabuada em $t1
 	
-	li		$v0, 1						# imprime ($a1 * intera��o)
+	li		$v0, 1						# imprime ($a1 * interacao)
 	add		$a0, $zero, $t1
 	syscall
 	
-	li      $v0, 4                      # imprime \n
-	la      $a0, newline
+	li      $v0, 4                      # imprime " "
+	la      $a0, str_space
 	syscall
 	
 	subi	$t0, $t0, 1					# decrementa contador
@@ -311,7 +311,7 @@ imc:
 	
 	mtc1    $zero, $f4 
 	c.lt.s 	$f1, $f4  
-	bc1t	printErro		# peso <= zero, erro
+	bc1t	printErro					# peso <= zero, erro
 
 	li 		$v0, 4 						# pede para o usuário a altura
 	la 		$a0, str_altura
@@ -322,7 +322,7 @@ imc:
 	mov.s 	$f2, $f0    				# (f2 = altura)
 
 	c.lt.s 	$f2, $f4
-	bc1t	printErro		# altura <= zero, erro
+	bc1t	printErro					# altura <= zero, erro
 	 
 	mul.s 	$f3, $f2, $f2   			# calcula altura^2 e atribui a f3
 	 
@@ -352,9 +352,10 @@ fatorial:
 	syscall
 
 	move    $a0, $v0                    # copia o valor entrado no registrador a0
-	jal funcFat                         # chama funcao do fatorial
-	
 	blt		$a0, $zero, printErro		# se base < 0, erro
+	
+	jal funcFat                         # chama funcao do fatorial
+
 
 	j printAns
 
