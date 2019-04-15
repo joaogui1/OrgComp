@@ -1,8 +1,10 @@
 	.data
 	.align 0
 
-str_menu1:	   .asciiz "Tecle 1 para soma\n2 para subtracao\n3 para multiplicacao\n4 para divisao\n5 para potencia\n6 para raiz\n"
-str_menu2:	   .asciiz "7 para tabuada\n8 para imc\n9 para fatorial\n10 para fiibonacci\n11 para sair do programa\nDigite uma opcao: "
+str_menu1:	   .asciiz "Menu:\n 1 - Soma\n2 - Subtracao\n"
+str_menu2:	   .asciiz "3 - Multiplicacao\n4 - Divisao\n5 - Potencia\n"
+str_menu3:     .asciiz "6 - Raiz Quadrada\n7 - Tabuada\n8 - IMC\n"
+str_menu4:	   .asciiz "9 - Fatorial\n10 - Fibonacci de um intervalo\n11 para sair do programa\nDigite uma opcao: \n"
 str_entrada:   .asciiz "Digite um numero: "
 str_peso:      .asciiz "Digite o peso: "
 str_altura:    .asciiz "Digite a altura: "
@@ -24,6 +26,14 @@ main:
 	la      $a0, str_menu2
 	syscall
 	
+	li	    $v0, 4						# imprime terceira string do menu
+	la      $a0, str_menu3
+	syscall
+
+	li	    $v0, 4						# imprime quarta string do menu
+	la      $a0, str_menu4
+	syscall
+
 	li      $v0, 5                      # le opcao
 	syscall
 	
