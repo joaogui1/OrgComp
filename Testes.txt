@@ -1,0 +1,559 @@
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 1
+Digite um numero: 1
+Digite um numero: 1
+A resposta eh: 2
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 1
+Digite um numero: 9999999
+Digite um numero: 11111111
+A resposta eh: 21111110
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 1
+Digite um numero: 123456789
+Digite um numero: 987654321
+A resposta eh: 1111111110
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 2
+Digite um numero: 1
+Digite um numero: 1
+A resposta eh: 0
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 2
+Digite um numero: 98
+Digite um numero: 35
+A resposta eh: 63
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 2
+Digite um numero: 987656789
+Digite um numero: 1234321
+A resposta eh: 986422468
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: 2
+Digite um numero: 2
+A resposta eh: 4
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: 32000
+Digite um numero: 32000
+A resposta eh: 1024000000
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: 33000
+Digite um numero: 33000
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 3
+Digite um numero: 20
+Digite um numero: 30
+A resposta eh: 600
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 4
+Digite um numero: 2
+A resposta eh: 2
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 32000
+Digite um numero: 4
+A resposta eh: 8000
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 4
+Digite um numero: 33000
+Digite um numero: 4
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: 2
+Digite um numero: 3
+A resposta eh: 8
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 5
+Digite um numero: 6
+Digite um numero: 13
+A resposta eh: 175792128
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: 4
+A resposta eh: 2
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: -1
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: 100
+A resposta eh: 10
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 6
+Digite um numero: 4059362
+A resposta eh: 2014
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 7
+Digite um numero: -1
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 7
+Digite um numero: 1
+A resposta eh: 
+1 2 3 4 5 6 7 8 9 10
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 7
+Digite um numero: 137
+A resposta eh: 
+137 274 411 548 685 822 959 1096 1233 1370
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: -1
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: 10
+Digite a altura: -1
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: 10
+Digite a altura: 1
+A resposta eh: 10.0
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 8
+Digite o peso: 58
+Digite a altura: 1.62
+A resposta eh: 22.10029
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 9
+Digite um numero: -1
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 9
+Digite um numero: 4
+A resposta eh: 24
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 9
+Digite um numero: 7
+A resposta eh: 5040
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 4
+Digite um numero: 2
+Entrada invalida. =(
+
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 2
+Digite um numero: 8
+1 2 3 5 8 13 21 
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 10
+Digite um numero: 1
+Digite um numero: 12
+1 1 2 3 5 8 13 21 34 55 89 144 
+
+Menu:
+1 - Soma
+2 - Subtracao
+3 - Multiplicacao
+4 - Divisao
+5 - Potencia
+6 - Raiz Quadrada
+7 - Tabuada
+8 - IMC
+9 - Fatorial
+10 - Fibonacci de um intervalo
+11 para sair do programa
+Digite uma opcao: 11
+Valeu, Bola o/
+
+-- program is finished running --
